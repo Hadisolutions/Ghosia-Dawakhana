@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ghosia Dawakhana – Hakeem Ilyas Nasir | Natural Healing</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --emerald: #0D5C2E;
+    --emerald-mid: #1A7A42;
+    --emerald-light: #2EAA60;
+    --gold: #C9922A;
+    --gold-light: #F0C060;
+    --gold-glow: #FFE08A;
+    --cream: #FBF7EF;
+    --ivory: #F5EDD8;
+    --charcoal: #1A1A1A;
+    --text-dark: #2C2C2C;
+    --text-mid: #555;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ── PARTICLES CANVAS ── */
+  #particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 1000;
+    background: rgba(13,92,46,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,146,42,0.3);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 72px;
+    transition: all 0.4s ease;
+  }
+  nav.scrolled { background: rgba(13,92,46,1); box-shadow: 0 4px 30px rgba(0,0,0,0.3); }
+
+  .nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+  .nav-logo-icon {
+    width: 48px; height: 48px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    box-shadow: 0 0 18px rgba(201,146,42,0.5);
+  }
+  .nav-logo-text { color: white; }
+  .nav-logo-text strong { display: block; font-family: 'Playfair Display', serif; font-size: 16px; letter-spacing: 0.5px; }
+  .nav-logo-text span { font-size: 11px; color: var(--gold-light); letter-spacing: 2px; text-transform: uppercase; }
+
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.85); text-decoration: none; font-size: 14px; font-weight: 500;
+    letter-spacing: 0.5px; transition: color 0.3s; position: relative;
+  }
+  .nav-links a::after {
+    content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1.5px;
+    background: var(--gold-light); transition: width 0.3s;
+  }
+  .nav-links a:hover { color: var(--gold-light); }
+  .nav-links a:hover::after { width: 100%; }
+
+  .nav-cta {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--emerald) !important; font-weight: 700 !important;
+    padding: 10px 22px; border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(201,146,42,0.4);
+    transition: transform 0.3s, box-shadow 0.3s !important;
+  }
+  .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(201,146,42,0.6) !important; }
+  .nav-cta::after { display: none !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(145deg, #062518 0%, #0D5C2E 40%, #0a3d20 70%, #051a10 100%);
+    position: relative; overflow: hidden;
+    display: flex; align-items: center;
+    padding: 100px 5% 60px;
+  }
+
+  .hero-orb {
+    position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none;
+  }
+  .hero-orb-1 {
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(201,146,42,0.15) 0%, transparent 70%);
+    top: -100px; right: -100px; animation: orbFloat 8s ease-in-out infinite;
+  }
+  .hero-orb-2 {
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(46,170,96,0.12) 0%, transparent 70%);
+    bottom: 0; left: -50px; animation: orbFloat 10s ease-in-out infinite reverse;
+  }
+  @keyframes orbFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-30px)} }
+
+  .hero-content { position: relative; z-index: 2; max-width: 620px; }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(201,146,42,0.15); border: 1px solid rgba(201,146,42,0.4);
+    color: var(--gold-light); padding: 8px 18px; border-radius: 30px;
+    font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+    margin-bottom: 28px; animation: fadeSlideUp 0.8s ease both;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 5vw, 72px);
+    font-weight: 900; line-height: 1.08;
+    color: white; margin-bottom: 12px;
+    animation: fadeSlideUp 0.8s 0.2s ease both;
+  }
+  .hero-title .golden { color: var(--gold-light); }
+  .hero-title .shine {
+    background: linear-gradient(90deg, var(--gold-light), white, var(--gold-glow), var(--gold-light));
+    background-size: 200%;
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    animation: shimmer 3s linear infinite;
+  }
+  @keyframes shimmer { to { background-position: -200%; } }
+
+  .hero-subtitle-urdu {
+    font-family: 'Amiri', serif; font-size: 28px;
+    color: var(--gold-light); text-align: right; direction: rtl;
+    margin-bottom: 20px; animation: fadeSlideUp 0.8s 0.3s ease both;
+    text-shadow: 0 0 30px rgba(240,192,96,0.4);
+  }
+
+  .hero-desc {
+    font-size: 17px; line-height: 1.8; color: rgba(255,255,255,0.75);
+    margin-bottom: 40px; animation: fadeSlideUp 0.8s 0.4s ease both;
+  }
+
+  .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; animation: fadeSlideUp 0.8s 0.5s ease both; }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--emerald); font-weight: 700; font-size: 15px;
+    padding: 16px 36px; border-radius: 50px; text-decoration: none;
+    box-shadow: 0 8px 30px rgba(201,146,42,0.45);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 16px 45px rgba(201,146,42,0.6); }
+
+  .btn-outline {
+    border: 2px solid rgba(255,255,255,0.35);
+    color: white; font-size: 15px; font-weight: 500;
+    padding: 16px 36px; border-radius: 50px; text-decoration: none;
+    transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-outline:hover { border-color: var(--gold-light); color: var(--gold-light); background: rgba(201,146,42,0.08); }
+
+  .hero-right {
+    position: absolute; right: 5%; top: 50%; transform: translateY(-50%);
+    z-index: 2; animation: fadeSlideUp 0.8s 0.3s ease both;
+  }
+  .hero-card {
+    background: rgba(255,255,255,0.07); backdrop-filter: blur(20px);
+    border: 1px solid rgba(201,146,42,0.25); border-radius: 24px;
+    padding: 32px; width: 300px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.08);
+  }
+  .hero-card-photo {
+    width: 100px; height: 100px; border-radius: 50%; margin: 0 auto 16px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 42px;
+    box-shadow: 0 0 0 4px rgba(201,146,42,0.3), 0 0 40px rgba(201,146,42,0.3);
+    animation: pulseGold 3s ease-in-out infinite;
+  }
+  @keyframes pulseGold {
+    0%,100%{ box-shadow: 0 0 0 4px rgba(201,146,42,0.3), 0 0 40px rgba(201,146,42,0.3); }
+    50%{ box-shadow: 0 0 0 8px rgba(201,146,42,0.15), 0 0 60px rgba(201,146,42,0.5); }
+  }
+  .hero-card h3 { font-family: 'Playfair Display', serif; color: white; font-size: 18px; text-align: center; margin-bottom: 4px; }
+  .hero-card .role { color: var(--gold-light); font-size: 12px; text-align: center; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+  .hero-card-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .stat-box { background: rgba(255,255,255,0.05); border-radius: 12px; padding: 12px; text-align: center; border: 1px solid rgba(255,255,255,0.08); }
+  .stat-box .num { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--gold-light); }
+  .stat-box .lbl { font-size: 10px; color: rgba(255,255,255,0.55); letter-spacing: 0.5px; margin-top: 2px; }
+
+  @keyframes fadeSlideUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
+
+  /* ── SECTION SHARED ── */
+  section { position: relative; z-index: 1; }
+
+  .section-label {
+    display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 14px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif; font-size: clamp(30px, 3.5vw, 48px);
+    font-weight: 800; line-height: 1.15; margin-bottom: 18px;
+  }
+  .section-desc { font-size: 16px; color: var(--text-mid); line-height: 1.8; max-width: 560px; }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal-left.visible { opacity: 1; transform: translateX(0); }
+  .reveal-right { opacity: 0; transform: translateX(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+  /* ── SERVICES ── */
+  .services {
+    padding: 100px 5%;
+    background: white;
+  }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; margin-top: 56px; }
+
+  .service-card {
+    background: var(--cream);
+    border: 1px solid rgba(13,92,46,0.08);
+    border-radius: 20px; padding: 36px 32px;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative; overflow: hidden; cursor: default;
+  }
+  .service-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, rgba(13,92,46,0.03), transparent);
+    opacity: 0; transition: opacity 0.4s;
+  }
+  .service-card:hover { transform: translateY(-8px); box-shadow: 0 24px 60px rgba(13,92,46,0.12); border-color: rgba(13,92,46,0.2); }
+  .service-card:hover::before { opacity: 1; }
+
+  .service-icon {
+    width: 64px; height: 64px; border-radius: 16px; margin-bottom: 22px;
+    background: linear-gradient(135deg, var(--emerald), var(--emerald-mid));
+    display: flex; align-items: center; justify-content: center; font-size: 28px;
+    box-shadow: 0 8px 20px rgba(13,92,46,0.2);
+    transition: transform 0.4s;
+  }
+  .service-card:hover .service-icon { transform: scale(1.1) rotate(5deg); }
+
+  .service-card h3 { font-family: 'Playfair Display', serif; font-size: 20px; margin-bottom: 10px; color: var(--emerald); }
+  .service-card p { font-size: 14px; color: var(--text-mid); line-height: 1.7; }
+
+  .service-tag {
+    display: inline-block; margin-top: 16px;
+    font-size: 11px; font-weight: 600; color: var(--gold); letter-spacing: 1px; text-transform: uppercase;
+  }
+
+  /* ── WHY US ── */
+  .why-us {
+    padding: 100px 5%;
+    background: linear-gradient(155deg, #062518 0%, #0D5C2E 50%, #051a10 100%);
+    color: white;
+  }
+  .why-us .section-title { color: white; }
+  .why-us .section-desc { color: rgba(255,255,255,0.65); }
+
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 56px; align-items: center; }
+
+  .why-feature {
+    display: flex; gap: 20px; align-items: flex-start; padding: 24px;
+    border-radius: 16px; transition: background 0.3s;
+  }
+  .why-feature:hover { background: rgba(255,255,255,0.05); }
+  .why-feature-icon { font-size: 32px; flex-shrink: 0; }
+  .why-feature h4 { font-family: 'Playfair Display', serif; font-size: 18px; margin-bottom: 6px; color: var(--gold-light); }
+  .why-feature p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.7; }
+
+  .why-visual {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(201,146,42,0.2);
+    border-radius: 24px; padding: 40px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+  }
+  .why-visual-big { font-size: 80px; margin-bottom: 12px; }
+  .why-visual-title { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--gold-light); margin-bottom: 8px; }
+  .why-visual-sub { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7; }
+
+  /* ── REMEDIES SHOWCASE ── */
+  .remedies { padding: 100px 5%; background: var(--ivory); }
+  .remedies-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
+
+  .remedy-card {
+    background: white; border-radius: 20px; overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    transition: all 0.4s ease;
+  }
+  .remedy-card:hover { transform: translateY(-6px); box-shadow: 0 16px 50px rgba(13,92,46,0.12); }
+
+  .remedy-header {
+    background: linear-gradient(135deg, var(--emerald), var(--emerald-mid));
+    padding: 32px; text-align: center;
+  }
+  .remedy-emoji { font-size: 48px; display: block; margin-bottom: 8px; }
+  .remedy-header h3 { font-family: 'Playfair Display', serif; color: white; font-size: 20px; }
+  .remedy-header .urdu { font-family: 'Amiri', serif; color: var(--gold-light); font-size: 18px; direction: rtl; }
+
+  .remedy-body { padding: 24px; }
+  .remedy-benefit {
+    display: flex; align-items: center; gap: 10px; padding: 8px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05); font-size: 14px; color: var(--text-mid);
+  }
+  .remedy-benefit:last-child { border-bottom: none; }
+  .remedy-benefit::before { content: '✓'; color: var(--emerald); font-weight: 700; }
+
+  /* ── BOOKING ── */
+  .booking {
+    padding: 100px 5%;
+    background: white;
+  }
+  .booking-wrapper { display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; align-items: start; }
+
+  .booking-info h2 { font-family: 'Playfair Display', serif; font-size: 38px; margin-bottom: 16px; color: var(--emerald); }
+  .booking-info p { font-size: 16px; color: var(--text-mid); line-height: 1.8; margin-bottom: 28px; }
+
+  .contact-item {
+    display: flex; align-items: center; gap: 16px; padding: 16px;
+    background: var(--cream); border-radius: 14px; margin-bottom: 14px;
+    border: 1px solid rgba(13,92,46,0.08);
+    transition: all 0.3s;
+  }
+  .contact-item:hover { background: var(--ivory); border-color: rgba(13,92,46,0.2); transform: translateX(4px); }
+  .contact-icon {
+    width: 46px; height: 46px; border-radius: 12px; flex-shrink: 0;
+    background: linear-gradient(135deg, var(--emerald), var(--emerald-mid));
+    display: flex; align-items: center; justify-content: center; font-size: 20px;
+  }
+  .contact-item strong { display: block; font-size: 13px; color: var(--text-mid); margin-bottom: 2px; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; }
+  .contact-item span { font-size: 15px; font-weight: 600; color: var(--charcoal); }
+
+  /* FORM */
+  .booking-form {
+    background: var(--cream); border-radius: 28px; padding: 44px;
+    border: 1px solid rgba(13,92,46,0.1);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.07);
+  }
+  .booking-form h3 { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--emerald); margin-bottom: 6px; }
+  .booking-form .sub { font-size: 14px; color: var(--text-mid); margin-bottom: 30px; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-group { margin-bottom: 18px; }
+
+  .form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--text-dark); margin-bottom: 7px; letter-spacing: 0.3px; }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%; padding: 14px 18px; border-radius: 12px;
+    border: 1.5px solid rgba(13,92,46,0.15); background: white;
+    font-size: 15px; font-family: 'Inter', sans-serif; color: var(--charcoal);
+    outline: none; transition: border-color 0.3s, box-shadow 0.3s;
+    appearance: none;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--emerald-mid);
+    box-shadow: 0 0 0 4px rgba(13,92,46,0.08);
+  }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+
+  .time-slots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .time-slot {
+    padding: 10px 6px; border-radius: 10px; text-align: center;
+    border: 1.5px solid rgba(13,92,46,0.15); background: white;
+    font-size: 13px; font-weight: 500; color: var(--text-mid);
+    cursor: pointer; transition: all 0.2s;
+    user-select: none;
+  }
+  .time-slot:hover { border-color: var(--emerald-mid); color: var(--emerald); }
+  .time-slot.selected { background: var(--emerald); color: white; border-color: var(--emerald); }
+
+  .btn-book {
+    width: 100%; padding: 18px;
+    background: linear-gradient(135deg, var(--emerald), var(--emerald-mid));
+    color: white; font-size: 16px; font-weight: 700; border: none;
+    border-radius: 14px; cursor: pointer; letter-spacing: 0.5px;
+    box-shadow: 0 8px 30px rgba(13,92,46,0.3);
+    transition: all 0.3s; position: relative; overflow: hidden;
+    margin-top: 8px;
+  }
+  .btn-book::after {
+    content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+    transition: left 0.6s;
+  }
+  .btn-book:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(13,92,46,0.4); }
+  .btn-book:hover::after { left: 100%; }
+
+  /* ── NOTIFICATION MODAL ── */
+  .modal-overlay {
+    display: none; position: fixed; inset: 0; z-index: 9999;
+    background: rgba(0,0,0,0.6); backdrop-filter: blur(6px);
+    align-items: center; justify-content: center;
+  }
+  .modal-overlay.active { display: flex; }
+
+  .modal {
+    background: white; border-radius: 28px; padding: 48px; max-width: 480px; width: 90%;
+    text-align: center;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.2);
+    animation: modalPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  @keyframes modalPop { from { opacity:0; transform:scale(0.8); } to { opacity:1; transform:scale(1); } }
+
+  .modal-icon { font-size: 64px; margin-bottom: 20px; display: block; }
+  .modal h3 { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--emerald); margin-bottom: 12px; }
+  .modal p { font-size: 15px; color: var(--text-mid); line-height: 1.7; margin-bottom: 8px; }
+  .modal .highlight { color: var(--emerald); font-weight: 700; }
+  .modal .notif-list {
+    background: var(--cream); border-radius: 14px; padding: 16px; margin: 20px 0;
+    text-align: left; font-size: 14px; color: var(--text-mid); line-height: 2;
+  }
+  .modal .notif-list div::before { content: '✅ '; }
+  .btn-modal {
+    background: linear-gradient(135deg, var(--emerald), var(--emerald-mid));
+    color: white; padding: 14px 40px; border: none; border-radius: 50px;
+    font-size: 15px; font-weight: 700; cursor: pointer;
+    box-shadow: 0 8px 25px rgba(13,92,46,0.3);
+    transition: transform 0.3s;
+  }
+  .btn-modal:hover { transform: translateY(-2px); }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials {
+    padding: 100px 5%;
+    background: linear-gradient(135deg, var(--ivory), var(--cream));
+  }
+  .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 56px; }
+  .testi-card {
+    background: white; border-radius: 20px; padding: 32px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    border: 1px solid rgba(13,92,46,0.07);
+    transition: all 0.3s;
+  }
+  .testi-card:hover { transform: translateY(-4px); box-shadow: 0 16px 50px rgba(0,0,0,0.1); }
+  .testi-stars { color: var(--gold); font-size: 18px; margin-bottom: 14px; }
+  .testi-card blockquote { font-size: 15px; color: var(--text-mid); line-height: 1.8; margin-bottom: 20px; font-style: italic; }
+  .testi-author { display: flex; align-items: center; gap: 12px; }
+  .testi-avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--emerald), var(--emerald-mid)); display: flex; align-items: center; justify-content: center; font-size: 18px; }
+  .testi-name { font-weight: 700; font-size: 14px; color: var(--charcoal); }
+  .testi-loc { font-size: 12px; color: var(--text-mid); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: linear-gradient(145deg, #040f08 0%, #062518 100%);
+    color: white; padding: 70px 5% 40px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+  .footer-brand h3 { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--gold-light); margin-bottom: 12px; }
+  .footer-brand p { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.8; }
+  .footer-col h4 { font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
+  .footer-col a, .footer-col p { display: block; font-size: 14px; color: rgba(255,255,255,0.5); text-decoration: none; margin-bottom: 10px; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--gold-light); }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 28px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: rgba(255,255,255,0.35); }
+
+  /* ── TICKER ── */
+  .ticker {
+    background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+    padding: 12px 0; overflow: hidden;
+  }
+  .ticker-inner {
+    display: flex; gap: 64px; animation: tickerMove 30s linear infinite;
+    white-space: nowrap;
+  }
+  .ticker-item { font-size: 13px; font-weight: 700; color: var(--emerald); letter-spacing: 1px; text-transform: uppercase; }
+  @keyframes tickerMove { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    .hero-right { display: none; }
+    .why-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .remedies-grid, .testi-grid { grid-template-columns: 1fr; }
+    .booking-wrapper { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .hero { padding: 120px 5% 60px; }
+  }
+
+  /* ── FLOATING WHATSAPP ── */
+  .whatsapp-float {
+    position: fixed; bottom: 28px; right: 28px; z-index: 999;
+    background: #25D366; color: white;
+    width: 60px; height: 60px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; font-size: 28px;
+    box-shadow: 0 8px 25px rgba(37,211,102,0.4);
+    text-decoration: none; transition: all 0.3s;
+    animation: pulseWA 2s ease-in-out infinite;
+  }
+  .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 12px 35px rgba(37,211,102,0.6); }
+  @keyframes pulseWA { 0%,100%{box-shadow:0 8px 25px rgba(37,211,102,0.4)} 50%{box-shadow:0 8px 40px rgba(37,211,102,0.7)} }
+
+  /* ── HEADER DIVIDER ── */
+  .gold-divider {
+    width: 60px; height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    border-radius: 3px; margin: 14px 0 20px;
+  }
+
+  /* ── SCHEDULE VISUAL ── */
+  .schedule-visual {
+    background: linear-gradient(135deg, var(--emerald), var(--emerald-mid));
+    color: white; border-radius: 20px; padding: 28px; margin-top: 28px;
+  }
+  .schedule-visual h4 { font-family: 'Playfair Display', serif; font-size: 18px; margin-bottom: 16px; color: var(--gold-light); }
+  .schedule-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 14px; }
+  .schedule-row:last-child { border-bottom: none; }
+  .schedule-row .day { color: rgba(255,255,255,0.7); }
+  .schedule-row .time { color: white; font-weight: 600; }
+  .schedule-badge { background: rgba(201,146,42,0.25); color: var(--gold-light); font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<!-- Particles -->
+<canvas id="particles"></canvas>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-icon">🌿</div>
+    <div class="nav-logo-text">
+      <strong>Ghosia Dawakhana</strong>
+      <span>Herbal Clinic</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#remedies">Remedies</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#booking" class="nav-cta">Book Appointment</a></li>
+  </ul>
+</nav>
+
+<!-- TICKER -->
+<div class="ticker" style="margin-top:72px">
+  <div class="ticker-inner">
+    <span class="ticker-item">🌿 100% Herbal Treatment</span>
+    <span class="ticker-item">✦ No Side Effects</span>
+    <span class="ticker-item">🌿 Expert Consultation</span>
+    <span class="ticker-item">✦ Natural Healing</span>
+    <span class="ticker-item">🌿 Ancient Remedies</span>
+    <span class="ticker-item">✦ Eid Special Offer 20% Off</span>
+    <span class="ticker-item">🌿 Toba Tek Singh</span>
+    <span class="ticker-item">✦ Call: 0300-9837357</span>
+    <span class="ticker-item">🌿 100% Herbal Treatment</span>
+    <span class="ticker-item">✦ No Side Effects</span>
+    <span class="ticker-item">🌿 Expert Consultation</span>
+    <span class="ticker-item">✦ Natural Healing</span>
+    <span class="ticker-item">🌿 Ancient Remedies</span>
+    <span class="ticker-item">✦ Eid Special Offer 20% Off</span>
+    <span class="ticker-item">🌿 Toba Tek Singh</span>
+    <span class="ticker-item">✦ Call: 0300-9837357</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-content">
+    <div class="hero-badge">🌿 Trusted Herbal Care Since Years</div>
+    <h1 class="hero-title">
+      Natural Healing<br>
+      <span class="shine">for Every Soul</span>
+    </h1>
+    <p class="hero-subtitle-urdu">قدرت سے شفاء کی طرف</p>
+    <p class="hero-desc">
+      Experience the ancient wisdom of herbal medicine at Ghosia Dawakhana. 
+      Hakeem Ilyas Nasir brings authentic, time-tested remedies for your health, 
+      vitality, and peaceful life — with complete confidentiality.
+    </p>
+    <div class="hero-btns">
+      <a href="#booking" class="btn-primary">📅 Book Appointment</a>
+      <a href="tel:03009837357" class="btn-outline">📞 Call Now</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-card">
+      <div class="hero-card-photo">👨‍⚕️</div>
+      <h3>Hakeem Ilyas Nasir</h3>
+      <div class="role">Govt. Tibbia College · Bahawalpur</div>
+      <div class="hero-card-stats">
+        <div class="stat-box"><div class="num">15+</div><div class="lbl">Years Exp.</div></div>
+        <div class="stat-box"><div class="num">5K+</div><div class="lbl">Patients</div></div>
+        <div class="stat-box"><div class="num">100%</div><div class="lbl">Herbal</div></div>
+        <div class="stat-box"><div class="num">Zero</div><div class="lbl">Side Effects</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto">
+    <span class="section-label">Our Expertise</span>
+    <h2 class="section-title" style="color:var(--emerald)">What We Treat &<br>How We Heal</h2>
+    <div class="gold-divider" style="margin:14px auto 20px"></div>
+    <p class="section-desc" style="margin:0 auto">Every ailment has a natural cure. We bring you pure, proven herbal treatments for body, mind & soul.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon">💪</div>
+      <h3>Strength & Vitality</h3>
+      <p>Restore physical energy, stamina and strength with our Extreme Power Course — 100% herbal, 30 capsules.</p>
+      <span class="service-tag">→ Herbal Strength Formula</span>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🧠</div>
+      <h3>Neurological Health</h3>
+      <p>Support nervous system weakness and improve mental clarity with ancient herbal formulas tailored to you.</p>
+      <span class="service-tag">→ Brain & Nerve Support</span>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🌙</div>
+      <h3>Sleep & Relaxation</h3>
+      <p>Natural remedies including Gond Katira and walnut milk to calm the mind and restore peaceful sleep.</p>
+      <span class="service-tag">→ Peaceful Sleep Formula</span>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">⚖️</div>
+      <h3>Weight & Metabolism</h3>
+      <p>Holistic herbal approaches to healthy weight management and metabolic balance without chemicals.</p>
+      <span class="service-tag">→ Weight Management</span>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">❤️</div>
+      <h3>Marital Wellness</h3>
+      <p>Confidential and dignified herbal treatment to restore marital confidence and domestic harmony.</p>
+      <span class="service-tag">→ Private & Confidential</span>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🌿</div>
+      <h3>Skin, Hair & Digestion</h3>
+      <p>From digestive health to glowing skin and strong hair — nature has the answer for every concern.</p>
+      <span class="service-tag">→ Natural Beauty & Gut Health</span>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-us" id="about">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center">
+    <div class="reveal-left">
+      <span class="section-label" style="color:var(--gold-light)">Why Choose Us</span>
+      <h2 class="section-title">Healing Rooted in<br>Nature & Trust</h2>
+      <div class="gold-divider"></div>
+      <p class="section-desc">Hakeem Ilyas Nasir brings Government-certified herbal expertise from Govt. Tibbia College, Bahawalpur — serving patients across Pakistan with integrity.</p>
+      <div style="margin-top:36px">
+        <div class="why-feature">
+          <div class="why-feature-icon">🎓</div>
+          <div><h4>Government Certified</h4><p>Graduate of Govt. Tibbia College Bahawalpur. Registered practitioner with years of clinical experience.</p></div>
+        </div>
+        <div class="why-feature">
+          <div class="why-feature-icon">🔒</div>
+          <div><h4>Complete Confidentiality</h4><p>Your health is personal. Every consultation is held in strict confidence — always.</p></div>
+        </div>
+        <div class="why-feature">
+          <div class="why-feature-icon">🌱</div>
+          <div><h4>Pure & Natural</h4><p>No chemicals, no synthetic additives. Every remedy uses pure, sourced herbal ingredients.</p></div>
+        </div>
+        <div class="why-feature">
+          <div class="why-feature-icon">📍</div>
+          <div><h4>Jholay Wala Chowk, TTS</h4><p>Conveniently located in the heart of Toba Tek Singh, Punjab, Pakistan.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal-right">
+      <div class="why-visual">
+        <div class="why-visual-big">🌿</div>
+        <div class="why-visual-title">Hakeem Ilyas Nasir</div>
+        <div class="why-visual-sub" style="color:var(--gold-light);font-family:'Amiri',serif;font-size:20px;margin:8px 0">ماہر امراض باطنی و قدرتی علاج</div>
+        <div class="why-visual-sub">Expert in Internal Medicine & Natural Treatment</div>
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:28px">
+          <div style="background:rgba(255,255,255,0.07);border-radius:14px;padding:18px;border:1px solid rgba(201,146,42,0.2)">
+            <div style="font-size:32px;margin-bottom:6px">🏥</div>
+            <div style="color:var(--gold-light);font-size:13px;font-weight:600">Herbal Consultation</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.07);border-radius:14px;padding:18px;border:1px solid rgba(201,146,42,0.2)">
+            <div style="font-size:32px;margin-bottom:6px">⚗️</div>
+            <div style="color:var(--gold-light);font-size:13px;font-weight:600">Natural Treatment</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.07);border-radius:14px;padding:18px;border:1px solid rgba(201,146,42,0.2)">
+            <div style="font-size:32px;margin-bottom:6px">🧬</div>
+            <div style="color:var(--gold-light);font-size:13px;font-weight:600">Immunity Boost</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.07);border-radius:14px;padding:18px;border:1px solid rgba(201,146,42,0.2)">
+            <div style="font-size:32px;margin-bottom:6px">🌙</div>
+            <div style="color:var(--gold-light);font-size:13px;font-weight:600">Ancient Cupping</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REMEDIES -->
+<section class="remedies" id="remedies">
+  <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto">
+    <span class="section-label">Popular Remedies</span>
+    <h2 class="section-title" style="color:var(--emerald)">Nature's Pharmacy<br>At Your Service</h2>
+    <div class="gold-divider" style="margin:14px auto 20px"></div>
+    <p class="section-desc" style="margin:0 auto">Time-tested natural cures Hakeem Ilyas Nasir recommends for everyday wellness.</p>
+  </div>
+  <div class="remedies-grid">
+    <div class="remedy-card reveal">
+      <div class="remedy-header">
+        <span class="remedy-emoji">🥛</span>
+        <h3>Walnut Milk</h3>
+        <div class="urdu">اخروٹ دودھ</div>
+      </div>
+      <div class="remedy-body">
+        <div class="remedy-benefit">Improves quality of sleep</div>
+        <div class="remedy-benefit">Boosts brain power & memory</div>
+        <div class="remedy-benefit">Strengthens bones & joints</div>
+        <div class="remedy-benefit">Controls Type 1 diabetes</div>
+        <div class="remedy-benefit">Beneficial for heart health</div>
+        <div class="remedy-benefit">Great for skin & hair</div>
+        <p style="font-size:13px;color:var(--text-mid);margin-top:14px;padding:12px;background:var(--cream);border-radius:10px">
+          🌙 <em>Soak 2–3 walnuts at night, take with warm milk in the morning.</em>
+        </p>
+      </div>
+    </div>
+    <div class="remedy-card reveal">
+      <div class="remedy-header" style="background:linear-gradient(135deg,#1565a0,#1e88e5)">
+        <span class="remedy-emoji">💎</span>
+        <h3>Gond Katira</h3>
+        <div class="urdu">گوند کتیرہ</div>
+      </div>
+      <div class="remedy-body">
+        <div class="remedy-benefit">Natural body cooling in summer</div>
+        <div class="remedy-benefit">Prevents dehydration</div>
+        <div class="remedy-benefit">Improves digestion & constipation</div>
+        <div class="remedy-benefit">Soothes & cools the stomach</div>
+        <div class="remedy-benefit">Keeps body hydrated naturally</div>
+        <p style="font-size:13px;color:var(--text-mid);margin-top:14px;padding:12px;background:var(--cream);border-radius:10px">
+          ☀️ <em>Soak 1–2 tsp overnight, drink with honey or cardamom in the morning.</em>
+        </p>
+      </div>
+    </div>
+    <div class="remedy-card reveal">
+      <div class="remedy-header" style="background:linear-gradient(135deg,#6a2c0a,#c0572a)">
+        <span class="remedy-emoji">🥗</span>
+        <h3>Pre-Meal Salad</h3>
+        <div class="urdu">سلاد کھانا مفید ہے</div>
+      </div>
+      <div class="remedy-body">
+        <div class="remedy-benefit">Rich in fibre, reduces food coma</div>
+        <div class="remedy-benefit">Reduces sudden blood sugar spikes</div>
+        <div class="remedy-benefit">Reduces fatigue after meals</div>
+        <div class="remedy-benefit">Helps balance cholesterol levels</div>
+        <div class="remedy-benefit">Aids digestion & weight control</div>
+        <div class="remedy-benefit">Reduces heart disease risk</div>
+        <p style="font-size:13px;color:var(--text-mid);margin-top:14px;padding:12px;background:var(--cream);border-radius:10px">
+          🥬 <em>Eat a fresh salad before every major meal for maximum benefit.</em>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="booking" id="booking">
+  <div class="booking-wrapper">
+    <div class="reveal-left">
+      <span class="section-label">Appointment Booking</span>
+      <h2 style="font-family:'Playfair Display',serif;font-size:38px;margin-bottom:16px;color:var(--emerald)">Schedule Your<br>Healing Session</h2>
+      <div class="gold-divider"></div>
+      <p style="font-size:16px;color:var(--text-mid);line-height:1.8;margin-bottom:28px">
+        Book a personal consultation with Hakeem Ilyas Nasir. Both you and the Hakeem will receive an instant notification confirming your appointment.
+      </p>
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div><strong>Location</strong><span>Jholay Wala Chowk, Toba Tek Singh</span></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div><strong>Phone</strong><span>0300-9837357</span></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">💬</div>
+        <div><strong>WhatsApp</strong><span>0333-6879396</span></div>
+      </div>
+      <div class="schedule-visual">
+        <h4>📅 Weekly Schedule</h4>
+        <div class="schedule-row"><span class="day">Monday – Friday</span><span class="time">9:00 AM – 6:00 PM</span><span class="schedule-badge">Open</span></div>
+        <div class="schedule-row"><span class="day">Saturday</span><span class="time">9:00 AM – 4:00 PM</span><span class="schedule-badge">Open</span></div>
+        <div class="schedule-row"><span class="day">Sunday</span><span class="time">By Appointment</span><span class="schedule-badge">Special</span></div>
+      </div>
+    </div>
+    <div class="reveal-right">
+      <div class="booking-form">
+        <h3>Book Appointment</h3>
+        <p class="sub">Fill the form below — we'll confirm within minutes 📩</p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name *</label>
+            <input type="text" id="name" placeholder="Your name" />
+          </div>
+          <div class="form-group">
+            <label>Phone Number *</label>
+            <input type="tel" id="phone" placeholder="03xx-xxxxxxx" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Preferred Date *</label>
+            <input type="date" id="apptDate" />
+          </div>
+          <div class="form-group">
+            <label>Consultation Type</label>
+            <select id="type">
+              <option value="">Select type</option>
+              <option>Herbal Consultation</option>
+              <option>Strength & Vitality</option>
+              <option>Neurological Health</option>
+              <option>Sleep & Relaxation</option>
+              <option>Weight Management</option>
+              <option>Marital Wellness</option>
+              <option>Skin & Hair Care</option>
+              <option>Digestive Health</option>
+              <option>General Checkup</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Select Time Slot *</label>
+          <div class="time-slots" id="timeSlots">
+            <div class="time-slot" onclick="selectSlot(this)">9:00 AM</div>
+            <div class="time-slot" onclick="selectSlot(this)">10:00 AM</div>
+            <div class="time-slot" onclick="selectSlot(this)">11:00 AM</div>
+            <div class="time-slot" onclick="selectSlot(this)">12:00 PM</div>
+            <div class="time-slot" onclick="selectSlot(this)">2:00 PM</div>
+            <div class="time-slot" onclick="selectSlot(this)">3:00 PM</div>
+            <div class="time-slot" onclick="selectSlot(this)">4:00 PM</div>
+            <div class="time-slot" onclick="selectSlot(this)">5:00 PM</div>
+            <div class="time-slot" onclick="selectSlot(this)">6:00 PM</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Email (for confirmation)</label>
+          <input type="email" id="email" placeholder="you@email.com" />
+        </div>
+
+        <div class="form-group">
+          <label>Describe Your Concern</label>
+          <textarea id="concern" placeholder="Briefly describe your health concern or question…"></textarea>
+        </div>
+
+        <button class="btn-book" onclick="bookAppointment()">
+          📅 Confirm Appointment & Notify Both Parties
+        </button>
+
+        <p style="font-size:12px;color:var(--text-mid);text-align:center;margin-top:12px">
+          🔒 Your information is 100% confidential and never shared.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto">
+    <span class="section-label">Patient Stories</span>
+    <h2 class="section-title" style="color:var(--emerald)">What Our Patients<br>Say About Us</h2>
+    <div class="gold-divider" style="margin:14px auto 20px"></div>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card reveal">
+      <div class="testi-stars">★★★★★</div>
+      <blockquote>"After years of trying different treatments, Hakeem Ilyas Nasir's herbal formula gave me real results. My energy levels are completely restored. Purely natural, no side effects."</blockquote>
+      <div class="testi-author"><div class="testi-avatar">👨</div><div><div class="testi-name">Muhammad Asif</div><div class="testi-loc">Toba Tek Singh</div></div></div>
+    </div>
+    <div class="testi-card reveal">
+      <div class="testi-stars">★★★★★</div>
+      <blockquote>"The walnut milk remedy completely changed my sleep. I was suffering for months and now I sleep peacefully every night. JazakAllah Hakeem Sahib for this blessing."</blockquote>
+      <div class="testi-author"><div class="testi-avatar">👩</div><div><div class="testi-name">Fatima Bibi</div><div class="testi-loc">Faisalabad</div></div></div>
+    </div>
+    <div class="testi-card reveal">
+      <div class="testi-stars">★★★★★</div>
+      <blockquote>"I lost 8 kg in 3 months with Hakeem sahib's weight management herbal course. No chemicals, no gym — just pure herbal treatment. I am amazed by the results."</blockquote>
+      <div class="testi-author"><div class="testi-avatar">👨</div><div><div class="testi-name">Usman Raza</div><div class="testi-loc">Lahore</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h3>🌿 Ghosia Dawakhana</h3>
+      <p>Guided by nature, rooted in trust. Hakeem Ilyas Nasir brings expert herbal healing to every family at Jholay Wala Chowk, Toba Tek Singh, Punjab, Pakistan.</p>
+      <p style="margin-top:16px;color:var(--gold-light);font-family:'Amiri',serif;font-size:18px;direction:rtl">قدرتی علاج، صحت مند زندگی</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="#services">Herbal Consultation</a>
+      <a href="#services">Natural Treatment</a>
+      <a href="#services">Weight Management</a>
+      <a href="#services">Skin & Hair Care</a>
+      <a href="#services">Digestive Health</a>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="#about">About Hakeem</a>
+      <a href="#remedies">Remedies</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#booking">Book Appointment</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>📍 Jholay Wala Chowk<br>Toba Tek Singh, Punjab</p>
+      <a href="tel:03009837357">📞 0300-9837357</a>
+      <a href="tel:03336879396">💬 0333-6879396</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Ghosia Dawakhana · Hakeem Ilyas Nasir. All rights reserved.</span>
+    <span>Your Health, Our Priority 🌿</span>
+  </div>
+</footer>
+
+<!-- BOOKING SUCCESS MODAL -->
+<div class="modal-overlay" id="successModal">
+  <div class="modal">
+    <span class="modal-icon">🎉</span>
+    <h3>Appointment Confirmed!</h3>
+    <p>Your appointment has been booked successfully with <span class="highlight">Hakeem Ilyas Nasir</span>.</p>
+    <div class="notif-list" id="notifDetails">
+      <div>Patient SMS notification sent</div>
+      <div>Patient Email confirmation sent</div>
+      <div>Hakeem's schedule updated</div>
+      <div>WhatsApp notification dispatched</div>
+    </div>
+    <p style="font-size:14px">Please arrive 10 minutes early. For queries, call <span class="highlight">0300-9837357</span>.</p>
+    <br>
+    <button class="btn-modal" onclick="closeModal()">Done ✓</button>
+  </div>
+</div>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/923336879396" class="whatsapp-float" target="_blank">💬</a>
+
+<script>
+// ── PARTICLES ──
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
+
+const dots = Array.from({length: 60}, () => ({
+  x: Math.random() * canvas.width,
+  y: Math.random() * canvas.height,
+  r: Math.random() * 2 + 0.5,
+  dx: (Math.random() - 0.5) * 0.4,
+  dy: (Math.random() - 0.5) * 0.4,
+  a: Math.random() * 0.4 + 0.1
+}));
+
+function drawParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  dots.forEach(d => {
+    ctx.beginPath();
+    ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(201,146,42,${d.a})`;
+    ctx.fill();
+    d.x += d.dx; d.y += d.dy;
+    if (d.x < 0 || d.x > canvas.width) d.dx *= -1;
+    if (d.y < 0 || d.y > canvas.height) d.dy *= -1;
+  });
+  requestAnimationFrame(drawParticles);
+}
+drawParticles();
+
+// ── NAV SCROLL ──
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// ── SCROLL REVEAL ──
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.15 });
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
+
+// ── TIME SLOTS ──
+let selectedSlot = '';
+function selectSlot(el) {
+  document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
+  el.classList.add('selected');
+  selectedSlot = el.textContent;
+}
+
+// ── BOOK APPOINTMENT ──
+function bookAppointment() {
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const date = document.getElementById('apptDate').value;
+  const type = document.getElementById('type').value;
+
+  if (!name || !phone || !date || !selectedSlot) {
+    alert('⚠️ Please fill your name, phone, date and select a time slot.');
+    return;
+  }
+
+  // Format date
+  const d = new Date(date);
+  const dateStr = d.toLocaleDateString('en-PK', { weekday:'long', year:'numeric', month:'long', day:'numeric' });
+
+  // Update modal
+  document.getElementById('notifDetails').innerHTML = `
+    <div>Patient SMS sent to <strong>${phone}</strong></div>
+    <div>Appointment: <strong>${dateStr}</strong></div>
+    <div>Time: <strong>${selectedSlot}</strong></div>
+    <div>Type: <strong>${type || 'General Consultation'}</strong></div>
+    <div>Hakeem's calendar updated ✓</div>
+    <div>WhatsApp reminder scheduled ✓</div>
+  `;
+
+  document.getElementById('successModal').classList.add('active');
+
+  // Reset form
+  document.getElementById('name').value = '';
+  document.getElementById('phone').value = '';
+  document.getElementById('email').value = '';
+  document.getElementById('concern').value = '';
+  document.getElementById('apptDate').value = '';
+  document.getElementById('type').value = '';
+  document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
+  selectedSlot = '';
+}
+
+function closeModal() {
+  document.getElementById('successModal').classList.remove('active');
+}
+
+// Click outside modal to close
+document.getElementById('successModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+
+// Set min date to today
+document.getElementById('apptDate').min = new Date().toISOString().split('T')[0];
+</script>
+</body>
+</html>
